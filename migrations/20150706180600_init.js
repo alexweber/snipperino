@@ -8,8 +8,7 @@ exports.up = function(knex, Promise) {
     table.integer('language_id').references('languages.id');
   }).createTable('tags', function (table) {
     table.increments('id').primary();
-    table.string('name', 150).notNullable();
-    table.string('slug', 150).unique();
+    table.string('name', 150).notNullable().unique();
   }).createTable('languages', function (table) {
     table.increments('id').primary();
     table.string('name', 150).notNullable();
