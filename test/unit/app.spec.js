@@ -24,7 +24,7 @@ describe('the App module', () => {
   });
 
   it('configures the router title', () => {
-    expect(sut.router.title).toEqual('Electron Aurelia');
+    expect(sut.router.title).toEqual('Snipperino');
   });
 
   it('should have a welcome route', () => {
