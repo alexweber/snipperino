@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/alexweber/skeleton-navigation/issues"
   },
-  "license": "MIT",
+  "license": "Unlicense",
   "author": "Alex Weber <alexweber15@gmail.com> (http://alexweber.com.br/)",
   "engines": {
     "node": ">=0.1.0"
