@@ -10,9 +10,14 @@ export class SnippetForm {
   tags = '';
   contents = '';
 
-  activate () {
+  activate (params) {
     // @TODO figure out if edit form and update default values.
+    if (params.hasOwnProperty('id')) {
+      
+    }
+
     // @TODO load available languages.
+
     this.languages.push({
       id: 1,
       name: 'JavaScript'
@@ -21,5 +26,12 @@ export class SnippetForm {
       id: 2,
       name: 'PHP'
     });
+  }
+
+  submit () {
+    console.log(this.title);
+    console.log(this.language);
+    console.log(this.tags);
+    console.log(this.contents);
   }
 }
