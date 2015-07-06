@@ -1,0 +1,13 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <form role="form" submit.delegate="submit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" value.bind="title" class="form-control" id="title" placeholder="Snippet title">
+      </div>
+    </form>
+
+  </section>
+</template>
