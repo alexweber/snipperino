@@ -4,7 +4,7 @@
   "description": "A code-snippet manager Electron app built with Aurelia.",
   "keywords": [
     "aurelia",
-    "electron-app"
+    "electron-app",
     "snippet"
   ],
   "homepage": "https://github.com/alexweber/snipperino",
