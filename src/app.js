@@ -6,18 +6,25 @@ export class App {
     config.title = 'Snipperino';
     config.map([
       {
-        route: ['','welcome'],
-        name: 'welcome',
-        moduleId: './welcome/welcome',
-        nav: true,
-        title: 'Welcome'
-      },
-      {
-        route: 'snippets',
+        route: ['', 'snippets'],
         name: 'snippets',
         moduleId: './snippets/snippets',
         nav: true,
         title: 'Snippets'
+      },
+      {
+        route: 'add',
+        name: 'add',
+        moduleId: './form/form',
+        nav: true,
+        title: 'Add Snippet'
+      },
+      {
+        route: 'edit/:id',
+        name: 'edit',
+        moduleId: './form/form',
+        nav: false,
+        title: 'Edit Snippet'
       }
     ]);
 
