@@ -8,14 +8,14 @@ export class App {
       {
         route: ['','welcome'],
         name: 'welcome',
-        moduleId: './welcome',
+        moduleId: './welcome/welcome',
         nav: true,
         title: 'Welcome'
       },
       {
         route: 'snippets',
         name: 'snippets',
-        moduleId: './snippets',
+        moduleId: './snippets/snippets',
         nav: true,
         title: 'Snippets'
       }

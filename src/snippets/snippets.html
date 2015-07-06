@@ -1,0 +1,15 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <div class="row au-stagger">
+      <div if.bind="snippets.length > 0" class="col-sm-12 col-md-12 au-animate" repeat.for="snippet of snippets">
+        ${snippet.title}
+      </div>
+
+      <div if.bind="snippets.length === 0" class="col-sm-12">
+        Looks like you haven't added any snippets yet!
+      </div>
+    </div>
+  </section>
+</template>
