@@ -12,7 +12,10 @@ export class ViewSnippet {
     return models.Snippet.forge({ id: params.id }).fetch({ withRelated: ['language'] }).then((snippet) => {
       if (snippet) {
         this.snippet = snippet.attributes;
-        this.language = snippet.related('language');
+        let language = snippet.related('language');
+        if (language.id) {
+          this.language = language.name;
+        }
       }
     }).catch(function (error) {
       console.error(error);
