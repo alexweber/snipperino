@@ -1,0 +1,22 @@
+<template>
+  <section class="au-animate">
+    <h2>${snippet.title}</h2>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Code</h3>
+      </div>
+      <div class="panel-body">
+        ${snippet.contents}
+      </div>
+
+      <ul class="list-group">
+        <li if.bind="language" class="list-group-item"><b>Language:</b> ${language}</li>
+        <li if.bind="snippet.tags" class="list-group-item"><b>Tags:</b> ${snippet.tags | tags}</li>
+      </ul>
+    </div>
+
+    <a route-href="route: snippet-edit; params.bind: { id: snippet.id }" class="btn btn-default">Edit</a>
+    <button type="button" class="btn btn-danger">Delete</button>
+  </section>
+</template>

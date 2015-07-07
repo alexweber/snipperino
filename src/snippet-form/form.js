@@ -1,4 +1,3 @@
-// let remote = require('remote');
 import models from '../db/models';
 
 export class SnippetForm {
@@ -14,11 +13,6 @@ export class SnippetForm {
   contents = '';
 
   activate (params) {
-    // @TODO load and update default values.
-    if (params.hasOwnProperty('id')) {
-
-    }
-
     // Load all available languages.
     models.Language.forge().fetchAll().then(function (results) {
       console.log(results);
@@ -36,6 +30,21 @@ export class SnippetForm {
       name: 'PHP',
       code: 'php'
     });
+
+    if (params.hasOwnProperty('id')) {
+      return models.Snippet.forge({ id: params.id }).fetch({ withRelated: ['language'] }).then((snippet) => {
+        if (snippet) {
+          let attrs = snippet.attributes;
+          this.title = attrs.title;
+          // this.tags = attrs.tags;
+          this.contents = attrs.contents;
+          let language = snippet.related('language');
+          if (language.hasOwnProperty('id')) {
+            this.language = language.id;
+          }
+        }
+      });
+    }
   }
 
   submit () {

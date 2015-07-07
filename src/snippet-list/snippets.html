@@ -1,0 +1,17 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <div class="row au-stagger">
+      <div if.bind="snippets.length > 0" class="col-sm-12 list-group au-animate">
+        <a repeat.for="snippet of snippets" route-href="route: snippet-view; params.bind: { id: snippet.id }"
+          class="list-group-item">${snippet.title}</a>
+      </div>
+
+      <div if.bind="snippets.length === 0" class="col-sm-12">
+        <div class="alert alert-warning" role="alert">Looks like you haven't added any snippets yet...
+          <a route-href="route: snippet-add">Add one now!</a></div>
+      </div>
+    </div>
+  </section>
+</template>

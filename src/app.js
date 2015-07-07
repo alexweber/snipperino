@@ -7,24 +7,31 @@ export class App {
     config.map([
       {
         route: ['', 'snippets'],
-        name: 'snippets',
-        moduleId: './snippets/snippets',
+        name: 'snippet-list',
+        moduleId: './snippet-list/snippets',
         nav: true,
         title: 'Snippets'
       },
       {
-        route: 'add',
-        name: 'add',
-        moduleId: './form/form',
+        route: 'snippet/add',
+        name: 'snippet-add',
+        moduleId: './snippet-form/form',
         nav: true,
         title: 'Add Snippet'
       },
       {
-        route: 'edit/:id',
-        name: 'edit',
-        moduleId: './form/form',
+        route: 'snippet/edit/:id',
+        name: 'snippet-edit',
+        moduleId: './snippet-form/form',
         nav: false,
         title: 'Edit Snippet'
+      },
+      {
+        route: 'snippet/view/:id',
+        name: 'snippet-view',
+        moduleId: './snippet-view/view',
+        nav: false,
+        title: 'View Snippet'
       }
     ]);
 
