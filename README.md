@@ -1,11 +1,8 @@
-# aurelia-skeleton-navigation
+# Snipperino
 
-[![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
-[![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Snipperino is a cross-platform snippet manager desktop app built on [Electron](http://electron.atom.io/), written with [Aurelia](http://aurelia.io/) and [Bookshelf](http://bookshelfjs.org/).
 
-This skeleton is part of the [Aurelia](http://www.aurelia.io/) platform. It sets up a standard navigation-style app using gulp to build your ES6 code with the Babel compiler. Karma/Protractor/Jasmine testing is also configured.
-
-> To keep up to date on [Aurelia](http://www.aurelia.io/), please visit and subscribe to [the official blog](http://blog.durandal.io/). If you have questions, we invite you to [join us on Gitter](https://gitter.im/aurelia/discuss). If you would like to have deeper insight into our development process, please install the [ZenHub](https://zenhub.io) Chrome Extension and visit any of our repository's boards. You can get an overview of all Aurelia work by visiting [the framework board](https://github.com/aurelia/framework#boards).
+It's currently in early development and barely usable, contributors welcome! :)
 
 ## Running The App
 
@@ -37,15 +34,8 @@ To run the app, follow these steps.
 6. To run the app, execute the following command:
 
   ```shell
-  gulp watch
+  npm start
   ```
-7. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files.
-
-> Note: At present there is a bug in the HTMLImports polyfill which only occurs on IE. We have submitted a pull request to the team with the fix. In the mean time, if you want to test on IE, you can work around the issue by explicitly adding a script tag before you load system.js. The script tag should look something like this (be sure to confirm the version number):
-
-```html
-<script src="jspm_packages/github/webcomponents/webcomponentsjs@0.5.2/HTMLImports.js"></script>
-```
 
 ## Running The Unit Tests
 
@@ -92,3 +82,11 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
   ```shell
   gulp e2e
   ```
+
+## Contributing
+
+If you like this/find it useful/find a bug please open an [issue](https://github.com/alexweber/snipperino/issues) and, better yet, submit a Pull Request! ☺ Any and all help appreciated, thanks!
+
+---
+
+[No rights reserved](http://unlicense.org/). Made with ♥ by [Alex Weber](https://twitter.com/alexweber15)
