@@ -9,10 +9,11 @@ exports.up = function(knex, Promise) {
   }).createTable('tags', function (table) {
     table.increments('id').primary();
     table.string('name', 150).notNullable().unique();
+    table.string('slug', 150).notNullable().unique();
   }).createTable('languages', function (table) {
     table.increments('id').primary();
-    table.string('name', 150).notNullable();
-    table.string('slug', 150).unique();
+    table.string('name', 150).notNullable().unique();
+    table.string('code', 150).notNullable().unique();
   }).createTable('snippets_tags', function(table) {
     table.integer('snippet_id').references('snippets.id');
     table.integer('tag_id').references('tags.id');
