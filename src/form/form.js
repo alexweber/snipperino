@@ -1,3 +1,6 @@
+// let remote = require('remote');
+import models from '../db/models';
+
 export class SnippetForm {
   heading = 'Add Snippet';
 
@@ -11,27 +14,40 @@ export class SnippetForm {
   contents = '';
 
   activate (params) {
-    // @TODO figure out if edit form and update default values.
+    // @TODO load and update default values.
     if (params.hasOwnProperty('id')) {
-      
+
     }
 
-    // @TODO load available languages.
+    // Load all available languages.
+    models.Language.forge().fetchAll().then(function (results) {
+      console.log(results);
+    }).catch (function (error) {
+      console.error(error);
+    });
 
     this.languages.push({
       id: 1,
-      name: 'JavaScript'
+      name: 'JavaScript',
+      code: 'javascript'
     });
     this.languages.push({
       id: 2,
-      name: 'PHP'
+      name: 'PHP',
+      code: 'php'
     });
   }
 
   submit () {
-    console.log(this.title);
-    console.log(this.language);
-    console.log(this.tags);
-    console.log(this.contents);
+    // @TODO validate
+    models.Snippet.forge({
+      title: this.title,
+      contents: this.contents
+    }).save().then(function (results) {
+      alert('Snippet saved!');
+      // @TODO clear form & redirect
+    }).catch(function (error) {
+      console.error(error);
+    });
   }
 }
