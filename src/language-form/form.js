@@ -11,6 +11,7 @@ export class LanguageForm {
   activate (params) {
     // Load language if editing.
     if (params.hasOwnProperty('id')) {
+      this.heading = 'Edit Language';
       return models.Language.forge({ id: params.id }).fetch().then((language) => {
         if (language) {
           let attrs = language.attributes;

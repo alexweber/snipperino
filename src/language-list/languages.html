@@ -4,7 +4,15 @@
 
     <div class="row au-stagger">
       <ul if.bind="languages.length > 0" class="col-sm-12 list-group au-animate">
-        <li repeat.for="lang of languages" class="list-group-item">${lang.name}</a>
+        <li repeat.for="lang of languages" class="list-group-item">
+          ${lang.name}
+          <span class="pull-right">
+            <a class="btn btn-xs btn-info" route-href="route: language-edit; params.bind: { id: lang.id }">Edit</a>
+            <a class="btn btn-xs btn-warning">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          </span>
+        </li>
       </ul>
 
       <div if.bind="languages.length === 0" class="col-sm-12">
