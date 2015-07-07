@@ -53,11 +53,9 @@
     "karma-coverage": "^0.3.1",
     "karma-jasmine": "^0.3.5",
     "karma-jspm": "^1.1.5",
-    "knex": "^0.8.6",
     "object.assign": "^1.0.3",
     "require-dir": "^0.1.0",
     "run-sequence": "^1.0.2",
-    "sqlite3": "^3.0.8",
     "vinyl-paths": "^1.0.0",
     "yargs": "^2.1.1"
   },
@@ -88,5 +86,9 @@
       }
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "bookshelf": "^0.8.1",
+    "knex": "^0.8.6",
+    "sqlite3": "^3.0.8"
+  }
 }
