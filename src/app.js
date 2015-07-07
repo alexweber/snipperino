@@ -32,6 +32,27 @@ export class App {
         moduleId: './snippet-view/view',
         nav: false,
         title: 'View Snippet'
+      },
+      {
+        route: 'languages',
+        name: 'language-list',
+        moduleId: './language-list/languages',
+        nav: true,
+        title: 'Languages'
+      },
+      {
+        route: 'language/add',
+        name: 'language-add',
+        moduleId: './language-form/form',
+        nav: false,
+        title: 'Add Language'
+      },
+      {
+        route: 'language/edit/:id',
+        name: 'language-edit',
+        moduleId: './language-form/form',
+        nav: false,
+        title: 'Edit Language'
       }
     ]);
 
