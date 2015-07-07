@@ -1,0 +1,17 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <div class="row au-stagger">
+      <ul if.bind="languages.length > 0" class="col-sm-12 list-group au-animate">
+        <li repeat.for="lang of languages" class="list-group-item">${lang.name}</a>
+      </ul>
+
+      <div if.bind="languages.length === 0" class="col-sm-12">
+        <div class="alert alert-warning" role="alert">Looks like you haven't added any languages yet...
+          <a route-href="route: language-add">Add one now!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

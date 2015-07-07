@@ -1,0 +1,21 @@
+<template>
+  <section class="au-animate">
+    <h2>${heading}</h2>
+
+    <form role="form" submit.delegate="submit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" value.bind="name" class="form-control" id="name" placeholder="Language name">
+      </div>
+      <div class="form-group">
+        <label for="code">Code</label>
+        <input type="text" value.bind="code" class="form-control" id="code" placeholder="Language code"
+          aria-describedby="helpBlock">
+          <span id="helpBlock" class="help-block">The language code is used for syntax highlighing.</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+  </section>
+</template>
