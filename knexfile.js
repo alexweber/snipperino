@@ -1,4 +1,4 @@
-var dbconfig = require('./app/dbconfig');
+var dbconfig = require('./src/db/config');
 
 module.exports = {
 

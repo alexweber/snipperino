@@ -1,8 +1,8 @@
 // Setup database.
-var bookshelf = require('./bookshelf');
+import bookshelf from './bookshelf';
 
 // Define models.
-var Language, Snippet, Tag;
+let Language, Snippet, Tag;
 
 Language = bookshelf.Model.extend({
   tableName: 'languages',
@@ -29,8 +29,8 @@ Tag = bookshelf.Model.extend({
   }
 });
 
-module.exports = {
-  "Language": Language,
-  "Snippet": Snippet,
-  "Tags": Tag
+export default {
+  Language,
+  Snippet,
+  Tag
 };

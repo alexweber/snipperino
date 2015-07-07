@@ -10,9 +10,6 @@ require('crash-reporter').start();
 // Adds debug features like hotkeys for triggering dev tools and reload.
 require('electron-debug')();
 
-// Init database.
-var models = require('./models');
-
 function createMainWindow() {
 	var win = new BrowserWindow({
 		width: 800,
