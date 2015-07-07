@@ -1,5 +1,4 @@
-// Uses ES5 for compatibility with Knex Migrations CLI.
-module.exports = {
+export default {
   client: 'sqlite3',
   connection: {
     filename: "./snipperino.sqlite"
