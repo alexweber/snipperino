@@ -1,6 +1,6 @@
 import models from '../db/models';
 
-export class Snippets {
+export class SnippetList {
   heading = 'My Snippets';
   snippets = [];
 

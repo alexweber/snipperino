@@ -1,6 +1,6 @@
 import models from '../db/models';
 
-export class ViewSnippet {
+export class SnippetView {
   snippet = null;
   language = null;
 
@@ -14,7 +14,7 @@ export class ViewSnippet {
         this.snippet = snippet.attributes;
         let language = snippet.related('language');
         if (language.id) {
-          this.language = language.name;
+          this.language = language.attributes.name;
         }
       }
     }).catch(function (error) {

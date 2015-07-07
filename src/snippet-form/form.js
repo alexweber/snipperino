@@ -7,6 +7,7 @@ export class SnippetForm {
   languages = [];
 
   // Default form values.
+  id = null;
   title = '';
   language = '';
   tags = '';
@@ -14,33 +15,29 @@ export class SnippetForm {
 
   activate (params) {
     // Load all available languages.
-    models.Language.forge().fetchAll().then(function (results) {
-      console.log(results);
+    models.Language.forge().fetchAll().then((results) => {
+      if (results.length) {
+        results.models.forEach((item) => {
+          this.languages.push(item.attributes);
+        });
+      }
     }).catch (function (error) {
       console.error(error);
     });
 
-    this.languages.push({
-      id: 1,
-      name: 'JavaScript',
-      code: 'javascript'
-    });
-    this.languages.push({
-      id: 2,
-      name: 'PHP',
-      code: 'php'
-    });
-
+    // Load snippet if editing.
     if (params.hasOwnProperty('id')) {
+      this.heading = 'Edit Snippet';
       return models.Snippet.forge({ id: params.id }).fetch({ withRelated: ['language'] }).then((snippet) => {
         if (snippet) {
           let attrs = snippet.attributes;
+          this.id = attrs.id;
           this.title = attrs.title;
           // this.tags = attrs.tags;
           this.contents = attrs.contents;
           let language = snippet.related('language');
-          if (language.hasOwnProperty('id')) {
-            this.language = language.id;
+          if (language.id) {
+            this.language = language.id.toString();
           }
         }
       });
@@ -49,12 +46,17 @@ export class SnippetForm {
 
   submit () {
     // @TODO validate
+    console.log(this);
     models.Snippet.forge({
+      id: this.id,
       title: this.title,
+      language_id: this.language,
       contents: this.contents
-    }).save().then(function (results) {
-      alert('Snippet saved!');
-      // @TODO clear form & redirect
+    }).save().then(function (result) {
+      if (result) {
+        alert('Snippet saved!');
+        // @TODO clear form & redirect
+      }
     }).catch(function (error) {
       console.error(error);
     });
