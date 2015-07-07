@@ -690,7 +690,7 @@ System.config({
       "bluebird": "npm:bluebird@2.9.32",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "chalk": "npm:chalk@1.1.0",
-      "commander": "npm:commander@2.6.0",
+      "commander": "npm:commander@2.8.1",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "debug": "npm:debug@2.2.0",
       "events": "github:jspm/nodelibs-events@0.1.1",
