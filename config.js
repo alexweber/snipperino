@@ -29,6 +29,7 @@ System.config({
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.12",
     "font-awesome": "npm:font-awesome@4.3.0",
+    "highlight.js": "npm:highlight.js@8.6.0",
     "knex": "npm:knex@0.8.6",
     "sqlite3": "npm:sqlite3@3.0.8",
     "github:aurelia/animator-css@0.13.0": {
@@ -637,6 +638,10 @@ System.config({
       "sntp": "npm:sntp@1.0.9",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0",
       "url": "github:jspm/nodelibs-url@0.1.0"
+    },
+    "npm:highlight.js@8.6.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:hoek@2.14.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

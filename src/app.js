@@ -1,5 +1,6 @@
 import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
+import 'highlight.js/styles/monokai_sublime.css!';
 
 export class App {
   configureRouter(config, router){

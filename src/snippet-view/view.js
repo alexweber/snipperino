@@ -3,6 +3,7 @@ import models from '../db/models';
 export class SnippetView {
   snippet = null;
   language = null;
+  langCode = null;
 
   canActivate(params) {
     return params.hasOwnProperty('id');
@@ -15,6 +16,7 @@ export class SnippetView {
         let language = snippet.related('language');
         if (language.id) {
           this.language = language.attributes.name;
+          this.langCode = language.attributes.code;
         }
       }
     }).catch(function (error) {

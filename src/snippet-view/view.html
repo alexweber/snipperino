@@ -1,4 +1,6 @@
 <template>
+  <require from='../highlight/highlight'></require>
+
   <section class="au-animate">
     <h2>${snippet.title}</h2>
 
@@ -7,7 +9,7 @@
         <h3 class="panel-title">Code</h3>
       </div>
       <div class="panel-body">
-        ${snippet.contents}
+        <pre><code highlight.bind="langCode">${snippet.contents}</code></pre>
       </div>
 
       <ul class="list-group">
