@@ -73,6 +73,7 @@
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0",
       "knex": "npm:knex@^0.8.6",
+      "safe-copy-paste": "npm:safe-copy-paste@^0.4.0",
       "sqlite3": "npm:sqlite3@^3.0.8"
     },
     "devDependencies": {
@@ -89,6 +90,7 @@
   "dependencies": {
     "bookshelf": "^0.8.1",
     "knex": "^0.8.6",
+    "safe-copy-paste": "^0.4.0",
     "sqlite3": "^3.0.8"
   }
 }

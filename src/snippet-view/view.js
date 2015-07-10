@@ -1,4 +1,5 @@
 import models from '../db/models';
+let cp = require('safe-copy-paste');
 
 export class SnippetView {
   snippet = null;
@@ -21,6 +22,12 @@ export class SnippetView {
       }
     }).catch(function (error) {
       console.error(error);
+    });
+  }
+
+  clipboardCopy() {
+    cp.copy(this.snippet.contents, function () {
+      alert('done');
     });
   }
 }

@@ -1,16 +1,15 @@
 <template>
   <require from='../highlight/highlight'></require>
+  <require from='../copy/copy'></require>
 
   <section class="au-animate">
+    <div class="pull-right">
+      <button type="button" class="btn btn-danger" click.trigger="clipboardCopy()">Copy</button>
+    </div>
     <h2>${snippet.title}</h2>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Code</h3>
-      </div>
-      <div class="panel-body">
-        <pre><code highlight.bind="langCode">${snippet.contents}</code></pre>
-      </div>
+    <div class="snippet-container">
+      <pre><code highlight.bind="langCode">${snippet.contents}</code></pre>
 
       <ul class="list-group">
         <li if.bind="language" class="list-group-item"><b>Language:</b> ${language}</li>
