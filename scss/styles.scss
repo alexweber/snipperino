@@ -29,6 +29,11 @@ section.au-enter-active {
   animation: fadeInRight 1s;
 }
 
+// Generic fade animation.
+.fade-in-box {
+  animation: 0.5s fade-in;
+}
+
 // Code Highlighting.
 .snippet-container pre {
   border: 0;
