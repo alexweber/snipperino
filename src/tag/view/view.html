@@ -1,0 +1,19 @@
+<template>
+  <section class="au-animate">
+
+    <h2>${tag.title}</h2>
+
+    <div class="tag-container">
+
+      <ul class="list-group">
+        <li class="list-group-item"><b>Slug:</b> ${tag.slug}</li>
+      </ul>
+    </div>
+
+    <a route-href="route: tag-edit; params.bind: { id: tag.id }" class="btn btn-default">Edit</a>
+
+    <div class="pull-right">
+      <button type="button" class="btn btn-danger">Delete</button>
+    </div>
+  </section>
+</template>

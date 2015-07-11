@@ -28,13 +28,13 @@ export class SnippetForm {
       return Snippet.load(params.id).then(snippet => {
         // @TODO assign vars
         console.log(snippet);
-        {
-          id: this.id,
-          title: this.title,
-          language: this.language,
-          tags: this.tags,
-          contents: this.contents
-        } = snippet;
+        // {
+        //   id: this.id,
+        //   title: this.title,
+        //   language: this.language,
+        //   tags: this.tags,
+        //   contents: this.contents
+        // } = snippet;
       }).catch(error => {
         console.error(error);
       });

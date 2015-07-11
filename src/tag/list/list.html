@@ -1,0 +1,30 @@
+<template>
+  <require from='./operations'></require>
+
+  <section class="au-animate">
+    <div class="container-fluid">
+      <a route-href="route: tag-add" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add tag</a>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">${heading}</div>
+
+        <div if.bind="tags.length === 0" class="panel-body">
+          <div class="alert alert-warning" role="alert">Looks like you haven't added any tags yet...</div>
+        </div>
+
+        <table if.bind="tags.length > 0" class="table">
+          <tr>
+            <th>Tag</th>
+            <th>Slug</th>
+            <th>Operations</th>
+          </tr>
+          <tr repeat.for="tag of tags">
+            <td>${tag.name}</td>
+            <td>${tag.slug}</td>
+            <td><tag-operations tag.bind="tag"></tag-operations></td>
+          </tr>
+        </table>
+      </div>
+    </div><!--/.container-fluid-->
+  </section>
+</template>
