@@ -1,4 +1,4 @@
-import models from '../db/models';
+import {Language} from '../language/language';
 
 export class LanguageForm {
   heading = 'Add Language';
@@ -12,12 +12,11 @@ export class LanguageForm {
     // Load language if editing.
     if (params.hasOwnProperty('id')) {
       this.heading = 'Edit Language';
-      return models.Language.forge({ id: params.id }).fetch().then((language) => {
+      return Language.load(params.id).then(language => {
         if (language) {
-          let attrs = language.attributes;
-          this.id = attrs.id;
-          this.name = attrs.name;
-          this.code = attrs.code;
+          this.id = language.id;
+          this.name = language.name;
+          this.code = language.code;
         }
       });
     }
@@ -25,14 +24,15 @@ export class LanguageForm {
 
   submit () {
     // @TODO validate
-    models.Language.forge({
+    let data = {
       id: this.id,
       name: this.name,
       code: this.code
-    }).save().then(function (results) {
+    };
+    Language.save(data).then(result => {
       alert('language saved!');
       // @TODO clear form & redirect
-    }).catch(function (error) {
+    }).catch(error => {
       console.error(error);
     });
   }
