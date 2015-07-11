@@ -17,7 +17,7 @@ export class App {
         route: 'snippet/add',
         name: 'snippet-add',
         moduleId: './snippet-form/form',
-        nav: true,
+        nav: false,
         title: 'Add Snippet'
       },
       {
