@@ -7,7 +7,14 @@ export class App {
     config.title = 'Snipperino';
     config.map([
       {
-        route: ['', 'snippets'],
+        route: '',
+        name: 'home',
+        moduleId: './home/home',
+        nav: false,
+        title: 'Home'
+      },
+      {
+        route: 'snippets',
         name: 'snippet',
         moduleId: './snippet/snippet',
         nav: true,
@@ -26,6 +33,13 @@ export class App {
         moduleId: './tag/tag',
         nav: true,
         title: 'Tags'
+      },
+      {
+        route: 'settings',
+        name: 'settings',
+        moduleId: './settings/form',
+        nav: true,
+        title: 'Settings'
       }
     ]);
 
