@@ -1,5 +1,8 @@
+import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 import {Language} from '../language';
 
+@inject(Router)
 export class LanguageForm {
   heading = 'Add Language';
 
@@ -7,6 +10,10 @@ export class LanguageForm {
   id = null;
   name = '';
   code = '';
+
+  constructor(Router) {
+    this.router = Router;
+  }
 
   activate (params) {
     // Load language if editing.
@@ -32,7 +39,7 @@ export class LanguageForm {
     Language.save(data).then(result => {
       // @TODO better messages.
       alert('language saved!');
-
+      this.router.navigateToRoute('language-list');
     }).catch(error => {
       console.error(error);
     });

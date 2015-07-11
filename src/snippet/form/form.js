@@ -1,6 +1,9 @@
+import {inject} from 'aurelia-framework';
+import {Router} from 'aurelia-router';
 import {Language} from '../../language/language';
 import {Snippet} from '../snippet';
 
+@inject(Router)
 export class SnippetForm {
   heading = 'Add Snippet';
 
@@ -13,6 +16,10 @@ export class SnippetForm {
   language = '';
   tags = '';
   contents = '';
+
+  constructor(Router) {
+    this.router = Router;
+  }
 
   activate (params) {
     // Load all available languages.
@@ -52,7 +59,7 @@ export class SnippetForm {
     }).save().then(function (result) {
       if (result) {
         alert('Snippet saved!');
-        // @TODO clear form & redirect
+        this.router.navigateToRoute('snippet-list');
       }
     }).catch(function (error) {
       console.error(error);
