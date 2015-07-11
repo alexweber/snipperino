@@ -30,8 +30,9 @@ export class LanguageForm {
       code: this.code
     };
     Language.save(data).then(result => {
+      // @TODO better messages.
       alert('language saved!');
-      // @TODO clear form & redirect
+      
     }).catch(error => {
       console.error(error);
     });
