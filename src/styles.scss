@@ -51,28 +51,6 @@ section.au-enter-active {
   animation: fadeInRight 1s;
 }
 
-/* animate flickr image entry */
-div.au-stagger {
-  /* 50ms will be applied between each successive enter operation */
-  -webkit-animation-delay:50ms;
-  animation-delay:50ms;
-}
-
-.flickr-img.au-enter {
-  opacity: 0!important;
-}
-
-.flickr-img.au-enter-active {
-  -webkit-animation: fadeIn 2s;
-  animation: fadeIn 2s;
-}
-
-.flickr-img > a > img {
-  width: 260px;
-  height: 180px;
-}
-
-
 /* animation definitions */
 @-webkit-keyframes fadeInRight {
   0% {
