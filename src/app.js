@@ -54,6 +54,14 @@ export class App {
         moduleId: './language-form/form',
         nav: false,
         title: 'Edit Language'
+      },
+      {
+        route: 'language/view/:id',
+        name: 'language-view',
+        moduleId: './language-view/view',
+        nav: false,
+        title: 'View Language'
+      },
       {
         route: 'tags',
         name: 'tags-list',
