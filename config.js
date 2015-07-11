@@ -31,7 +31,6 @@ System.config({
     "font-awesome": "npm:font-awesome@4.3.0",
     "highlight.js": "npm:highlight.js@8.6.0",
     "knex": "npm:knex@0.8.6",
-    "safe-copy-paste": "npm:safe-copy-paste@0.4.0",
     "sqlite3": "npm:sqlite3@3.0.8",
     "github:aurelia/animator-css@0.13.0": {
       "aurelia-templating": "github:aurelia/templating@0.13.0"
@@ -979,11 +978,6 @@ System.config({
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:safe-copy-paste@0.4.0": {
-      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.1",
-      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:semver@4.3.6": {
       "process": "github:jspm/nodelibs-process@0.1.1"
