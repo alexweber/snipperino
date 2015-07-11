@@ -18,7 +18,7 @@
 
       <div class="pull-right btn-group" role="group">
         <a route-href="route: tag-list" class="btn btn-default">Cancel</a>
-        <button if.bind="id" type="button" class="btn btn-danger">Delete</button>
+        <button if.bind="id" click.trigger="doDelete()" type="button" class="btn btn-danger">Delete</button>
       </div>
     </form>
 

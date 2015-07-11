@@ -47,4 +47,20 @@ export class TagForm {
       console.error(error);
     });
   }
+
+  // @TODO figure out how to reduce code duplication between this delete and the
+  // one from the operations custom element.
+  doDelete() {
+    // @TODO proper confirmation.
+    let ok = confirm(`Are you sure you want to delete the tag: ${this.name}?`);
+    if (ok) {
+      Tag.delete(this.id).then(function () {
+        // @TODO proper messages.
+        alert('tag deleted!');
+        this.router.navigateToRoute('tag-list');
+      }).catch(function(error) {
+        console.error(error);
+      });
+    }
+  }
 }
