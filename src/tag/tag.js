@@ -8,28 +8,28 @@ export class Tag {
         name: 'tag-list',
         moduleId: './list/list',
         nav: true,
-        title: 'List'
+        title: 'All'
       },
       {
         route: 'add',
         name: 'tag-add',
         moduleId: './form/form',
         nav: true,
-        title: 'Add Tag'
+        title: 'Add'
       },
       {
         route: 'edit/:id',
         name: 'tag-edit',
         moduleId: './form/form',
         nav: false,
-        title: 'Edit Tag'
+        title: 'Edit'
       },
       {
         route: 'view/:id',
         name: 'tag-view',
         moduleId: './view/view',
         nav: false,
-        title: 'View Tag'
+        title: 'View'
       }
     ]);
 
