@@ -1,4 +1,4 @@
-import {Language} from '../language/language';
+import {Language} from '../language';
 
 export class LanguageList {
   heading = 'Languages';

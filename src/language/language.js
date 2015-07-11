@@ -8,6 +8,7 @@ export class Language {
    * @return {Promise} A promise for an array of language information objects.
    */
   static all() {
+    // @TODO pagination
     return models.Language.forge().fetchAll().then((results) => {
       let languages = [];
       if (results.length) {

@@ -1,4 +1,4 @@
-import {Language} from '../language/language';
+import {Language} from '../language';
 
 export class LanguageForm {
   heading = 'Add Language';
@@ -32,7 +32,7 @@ export class LanguageForm {
     Language.save(data).then(result => {
       // @TODO better messages.
       alert('language saved!');
-      
+
     }).catch(error => {
       console.error(error);
     });

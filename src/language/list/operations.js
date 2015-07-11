@@ -1,5 +1,5 @@
 import {customElement, bindable} from 'aurelia-framework';
-import {Language} from '../language/language';
+import {Language} from '../language';
 
 @customElement('language-operations')
 export class LanguageOperations {
