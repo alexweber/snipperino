@@ -48,7 +48,7 @@ export class SnippetForm {
     }
   }
 
-  submit () {
+  doSubmit () {
     // @TODO validate
     console.log(this);
     models.Snippet.forge({

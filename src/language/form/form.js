@@ -29,7 +29,7 @@ export class LanguageForm {
     }
   }
 
-  submit () {
+  doSubmit () {
     // @TODO validate
     let data = {
       id: this.id,

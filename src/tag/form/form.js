@@ -32,7 +32,7 @@ export class TagForm {
     }
   }
 
-  submit () {
+  doSubmit () {
     // @TODO validate
     let data = {
       id: this.id,
