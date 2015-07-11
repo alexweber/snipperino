@@ -2,7 +2,11 @@
 
 var app = require('app');
 var BrowserWindow = require('browser-window');
+// var menubar = require('menubar');
 var client = require('electron-connect').client;
+
+// Init menubar.
+// var mb = menubar();
 
 // Report crashes to the Electron project.
 require('crash-reporter').start();
@@ -42,6 +46,10 @@ app.on('activate-with-no-open-windows', function () {
 		mainWindow = createMainWindow();
 	}
 });
+
+// mb.on('ready', function ready () {
+//
+// });
 
 app.on('ready', function () {
 	mainWindow = createMainWindow();
