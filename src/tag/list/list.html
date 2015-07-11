@@ -4,11 +4,11 @@
     <div class="container-fluid">
       <!-- <a route-href="route: tag-add" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add tag</a> -->
 
-      <div if.bind="tagsEmpty">
+      <div if.bind="tags.length === 0">
         <div class="alert alert-warning" role="alert">Looks like you haven't added any tags yet!</div>
       </div>
 
-      <div if.bind="!tagsEmpty" class="panel panel-default">
+      <div if.bind="tags.length > 0" class="panel panel-default">
         <div class="panel-heading">All Tags</div>
 
         <table class="table">
