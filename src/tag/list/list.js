@@ -1,7 +1,6 @@
 import {Tag} from '../tag';
 
 export class TagList {
-  heading = 'Tags';
   tags = [];
 
   activate() {
