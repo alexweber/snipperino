@@ -1,10 +1,9 @@
 <template>
   <require from='../highlight/highlight'></require>
-  <require from='../copy/copy'></require>
 
   <section class="au-animate">
     <div class="pull-right">
-      <button type="button" class="btn btn-danger" click.trigger="clipboardCopy()">Copy</button>
+      <button type="button" class="btn btn-success" click.trigger="clipboardCopy()"><span class="glyphicon glyphicon-copy"></span> Copy</button>
     </div>
     <h2>${snippet.title}</h2>
 
