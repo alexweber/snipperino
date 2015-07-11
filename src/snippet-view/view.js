@@ -27,6 +27,7 @@ export class SnippetView {
 
   clipboardCopy() {
     cp.copy(this.snippet.contents, function () {
+      // @TODO better messages
       alert('done');
     });
   }
