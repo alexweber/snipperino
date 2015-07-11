@@ -1,30 +1,35 @@
 <template>
-  <require from='./operations'></require>
-
   <section class="au-animate">
-    <div class="container-fluid">
-      <a route-href="route: language-add" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add language</a>
+    <h2>My Languages</h2>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">${heading}</div>
+    <div if.bind="languages.length === 0" class="fade-in-box">
+      <div class="alert alert-warning" role="alert">Looks like you haven't added any languages yet!</div>
+    </div>
 
-        <div if.bind="languages.length === 0" class="panel-body">
-          <div class="alert alert-warning" role="alert">Looks like you haven't added any languages yet...</div>
-        </div>
+    <table if.bind="languages.length > 0" class="table">
+      <tr>
+        <th>Name</th>
+        <th>Code</th>
+        <th>Operations</th>
+      </tr>
 
-        <table if.bind="languages.length > 0" class="table">
-          <tr>
-            <th>Language</th>
-            <th>Code</th>
-            <th>Operations</th>
-          </tr>
-          <tr repeat.for="lang of languages">
-            <td>${lang.name}</td>
-            <td>${lang.code}</td>
-            <td><language-operations lang.bind="lang"></language-operations></td>
-          </tr>
-        </table>
-      </div>
-    </div><!--/.container-fluid-->
+      <tr repeat.for="lang of languages">
+        <td>${lang.name}</td>
+        <td>${lang.code}</td>
+        <td>
+          <a route-href="route: language-view; params.bind: { id: lang.id }" class="btn btn-info">
+            <span class="glyphicon glyphicon-info-sign"></span> View
+          </a>
+
+          <a route-href="route: language-edit; params.bind: { id: lang.id }" class="btn btn-warning">
+            <span class="glyphicon glyphicon-edit"></span> Edit
+          </a>
+
+          <button click.trigger="$parent.doDelete($index)" type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove"></span> Delete
+          </button>
+        </td>
+      </tr>
+    </table>
   </section>
 </template>

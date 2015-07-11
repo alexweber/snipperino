@@ -1,0 +1,12 @@
+<template>
+  <section class="au-animate">
+
+    <h2>${language.name}</h2>
+
+    <a route-href="route: language-edit; params.bind: { id: language.id }" class="btn btn-default">Edit</a>
+
+    <div class="pull-right">
+      <button type="button" click.trigger="doDelete()" class="btn btn-danger">Delete</button>
+    </div>
+  </section>
+</template>
