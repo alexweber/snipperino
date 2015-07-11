@@ -3,7 +3,7 @@ import highlight from 'highlight.js';
 
 @customAttribute('highlight')
 @inject(Element)
-export class Highlight {
+export class SnippetHighlight {
   constructor(element) {
     this.element = element;
   }
