@@ -46,7 +46,7 @@ export class Tag {
     return models.Tag.forge().fetchAll().then(results => {
       let tags = [];
       if (results.length) {
-        results.models.forEach((item) => {
+        results.models.forEach(item => {
           tags.push(item.attributes);
         });
       }

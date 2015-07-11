@@ -1,5 +1,4 @@
 <template>
-  <require from='./operations'></require>
 
   <section class="au-animate">
     <div class="container-fluid">
@@ -18,10 +17,19 @@
             <th>Slug</th>
             <th>Operations</th>
           </tr>
+
           <tr repeat.for="tag of tags">
             <td>${tag.name}</td>
             <td>${tag.slug}</td>
-            <td><tag-operations tag.bind="tag"></tag-operations></td>
+            <td>
+              <a route-href="route: tag-edit; params.bind: { id: tag.id }" class="btn btn-info">
+                <span class="glyphicon glyphicon-edit"></span> Edit
+              </a>
+
+              <button click.trigger="$parent.doDelete($index)" type="button" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span> Delete
+              </button>
+            </td>
           </tr>
         </table>
       </div>
