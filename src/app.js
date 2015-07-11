@@ -37,56 +37,56 @@ export class App {
       {
         route: 'languages',
         name: 'language-list',
-        moduleId: './language-list/languages',
+        moduleId: './language/list/list',
         nav: true,
         title: 'Languages'
       },
       {
         route: 'language/add',
         name: 'language-add',
-        moduleId: './language-form/form',
+        moduleId: './language/form/form',
         nav: false,
         title: 'Add Language'
       },
       {
         route: 'language/edit/:id',
         name: 'language-edit',
-        moduleId: './language-form/form',
+        moduleId: './language/form/form',
         nav: false,
         title: 'Edit Language'
       },
       {
         route: 'language/view/:id',
         name: 'language-view',
-        moduleId: './language-view/view',
+        moduleId: './language/view/view',
         nav: false,
         title: 'View Language'
       },
       {
         route: 'tags',
         name: 'tags-list',
-        moduleId: './tag-list/tags',
+        moduleId: './tag/list/list',
         nav: true,
         title: 'Tags'
       },
       {
         route: 'tag/add',
         name: 'tag-add',
-        moduleId: './tag-form/form',
+        moduleId: './tag/form/form',
         nav: false,
         title: 'Add Tag'
       },
       {
         route: 'tag/edit/:id',
         name: 'tag-edit',
-        moduleId: './tag-form/form',
+        moduleId: './tag/form/form',
         nav: false,
         title: 'Edit Tag'
       },
       {
         route: 'tag/view/:id',
         name: 'tag-view',
-        moduleId: './tag-view/view',
+        moduleId: './tag/view/view',
         nav: false,
         title: 'View Tag'
       }
