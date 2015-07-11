@@ -9,12 +9,12 @@
       </div>
       <div class="form-group">
         <label for="slug">Slug</label>
-        <input type="text" value.bind="slug" class="form-control" id="slug" placeholder="Tag slug"
-          aria-describedby="helpBlock">
-          <span id="helpBlock" class="help-block">The slug is used for queries.</span>
+        <input type="text" value="${slug}" class="form-control" id="slug" placeholder="Tag slug"
+          aria-describedby="helpBlock" readonly>
+          <span id="helpBlock" class="help-block">The slug is used for custom queries.</span>
       </div>
 
-      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="submit" class="btn btn-success">Save</button>
 
       <div class="pull-right btn-group" role="group">
         <a route-href="route: tag-list" class="btn btn-default">Cancel</a>

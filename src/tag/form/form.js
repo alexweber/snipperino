@@ -1,4 +1,5 @@
 import {Tag} from '../tag';
+let slug = require('slug');
 
 export class TagForm {
   heading = 'Add Tag';
@@ -6,7 +7,10 @@ export class TagForm {
   // Default form values.
   id = null;
   name = '';
-  slug = '';
+
+  get slug() {
+    return slug(this.name);
+  }
 
   activate (params) {
     // Load tag if editing.
@@ -16,7 +20,6 @@ export class TagForm {
         if (tag) {
           this.id = tag.id;
           this.name = tag.name;
-          this.slug = tag.slug;
         }
       });
     }
