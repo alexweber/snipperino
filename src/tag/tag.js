@@ -30,7 +30,7 @@ export class Tag {
         moduleId: './view/view',
         nav: false,
         title: 'View'
-      }
+      },
     ]);
 
     this.router = router;
