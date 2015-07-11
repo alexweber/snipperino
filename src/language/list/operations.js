@@ -6,11 +6,15 @@ export class LanguageOperations {
   @bindable lang = {id:null};
 
   doDelete() {
-    Language.delete(this.lang.id).then(function () {
-      // @TODO proper messages.
-      alert('langage deleted!');
-    }).catch(function(error) {
-      console.error(error);
-    });
+    // @TODO proper confirmation.
+    let ok = confirm(`Are you sure you want to delete the language: ${this.lang.name}?`);
+    if (ok) {
+      Language.delete(this.lang.id).then(function () {
+        // @TODO proper messages.
+        alert('langage deleted!');
+      }).catch(function(error) {
+        console.error(error);
+      });
+    }
   }
 }
