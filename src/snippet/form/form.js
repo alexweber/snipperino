@@ -25,7 +25,7 @@ export class SnippetForm {
     // Load all available languages.
     Language.all().then(languages => {
       this.languages = languages;
-    }).catch(function (error) {
+    }).catch(error => {
       console.error(error);
     });
 
@@ -56,12 +56,12 @@ export class SnippetForm {
       title: this.title,
       language_id: this.language,
       contents: this.contents
-    }).save().then(function (result) {
+    }).save().then(result => {
       if (result) {
         alert('Snippet saved!');
         this.router.navigateToRoute('snippet-list');
       }
-    }).catch(function (error) {
+    }).catch(error => {
       console.error(error);
     });
   }

@@ -21,14 +21,15 @@ export class SnippetView {
         }
       }
     }).catch(function (error) {
+    }).catch(error => {
       console.error(error);
     });
   }
 
   clipboardCopy() {
-    cp.copy(this.snippet.contents, function () {
+    cp.copy(this.snippet.contents, () => {
       // @TODO better messages
-      alert('done');
+      alert('copied!');
     });
   }
 }

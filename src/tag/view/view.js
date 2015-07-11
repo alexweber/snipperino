@@ -23,11 +23,11 @@ export class TagView {
     // @TODO proper confirmation.
     let ok = confirm(`Are you sure you want to delete the tag: ${this.tag.name}?`);
     if (ok) {
-      Tag.delete(this.tag.id).then(function () {
+      Tag.delete(this.tag.id).then(() => {
         // @TODO proper messages.
         alert('tag deleted!');
         this.router.navigateToRoute('tag-list');
-      }).catch(function(error) {
+      }).catch(error => {
         console.error(error);
       });
     }
