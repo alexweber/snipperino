@@ -49,7 +49,7 @@ export class TagForm {
   }
 
   // @TODO figure out how to reduce code duplication between this delete and the
-  // one from the tag list page.
+  // one from the tag list page and the one on the view page.
   doDelete() {
     // @TODO proper confirmation.
     let ok = confirm(`Are you sure you want to delete the tag: ${this.name}?`);

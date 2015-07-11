@@ -7,30 +7,30 @@
       <div class="alert alert-warning" role="alert">Looks like you haven't added any tags yet!</div>
     </div>
 
-    <div if.bind="tags.length > 0" class="panel panel-default">
-      <div class="panel-heading">All Tags</div>
+    <table if.bind="tags.length > 0" class="table">
+      <tr>
+        <th>Name</th>
+        <th>Slug</th>
+        <th>Operations</th>
+      </tr>
 
-      <table class="table">
-        <tr>
-          <th>Tag</th>
-          <th>Slug</th>
-          <th>Operations</th>
-        </tr>
+      <tr repeat.for="tag of tags">
+        <td>${tag.name}</td>
+        <td>${tag.slug}</td>
+        <td>
+          <a route-href="route: tag-view; params.bind: { id: tag.id }" class="btn btn-info">
+            <span class="glyphicon glyphicon-info-sign"></span> View
+          </a>
 
-        <tr repeat.for="tag of tags">
-          <td>${tag.name}</td>
-          <td>${tag.slug}</td>
-          <td>
-            <a route-href="route: tag-edit; params.bind: { id: tag.id }" class="btn btn-info">
-              <span class="glyphicon glyphicon-edit"></span> Edit
-            </a>
+          <a route-href="route: tag-edit; params.bind: { id: tag.id }" class="btn btn-warning">
+            <span class="glyphicon glyphicon-edit"></span> Edit
+          </a>
 
-            <button click.trigger="$parent.doDelete($index)" type="button" class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove"></span> Delete
-            </button>
-          </td>
-        </tr>
-      </table>
-    </div>
+          <button click.trigger="$parent.doDelete($index)" type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove"></span> Delete
+          </button>
+        </td>
+      </tr>
+    </table>
   </section>
 </template>
