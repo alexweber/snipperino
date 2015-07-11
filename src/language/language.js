@@ -20,13 +20,13 @@ export class Language {
   }
 
   static load(id) {
-    return models.Language.forge({ id: params.id }).fetch().then(language => {
+    return models.Language.forge({ id: id }).fetch().then(language => {
       return language ? language.attributes : language;
     });
   }
 
   static save(data = {}) {
-    return models.Language.forge(data);
+    return models.Language.forge(data).save();
   }
 
   /**
