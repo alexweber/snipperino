@@ -1,4 +1,4 @@
-import models from '../db/models';
+import models from '../../db/models';
 let cp = require('safe-copy-paste');
 
 export class SnippetView {

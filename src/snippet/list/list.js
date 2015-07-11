@@ -1,4 +1,4 @@
-import models from '../db/models';
+import models from '../../db/models';
 
 export class SnippetList {
   heading = 'My Snippets';
