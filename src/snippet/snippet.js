@@ -1,6 +1,40 @@
 import models from '../db/models';
 
 export class Snippet {
+  configureRouter(config, router) {
+    config.map([
+      {
+        route: '',
+        name: 'snippet-list',
+        moduleId: './list/list',
+        nav: true,
+        title: 'All'
+      },
+      {
+        route: 'add',
+        name: 'snippet-add',
+        moduleId: './form/form',
+        nav: true,
+        title: 'Add'
+      },
+      {
+        route: 'edit/:id',
+        name: 'snippet-edit',
+        moduleId: './form/form',
+        nav: false,
+        title: 'Edit'
+      },
+      {
+        route: 'view/:id',
+        name: 'snippet-view',
+        moduleId: './view/view',
+        nav: false,
+        title: 'View'
+      },
+    ]);
+
+    this.router = router;
+  }
 
   static all() {
 
