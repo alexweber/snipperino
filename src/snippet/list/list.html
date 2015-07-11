@@ -1,20 +1,14 @@
 <template>
   <section class="au-animate">
-    <h2>${heading}</h2>
+    <h2>My Snippets</h2>
 
-    <div class="row">
-      <a route-href="route: snippet-add" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add snippet</a>
+    <div if.bind="snippets.length === 0" class="fade-in-box">
+      <div class="alert alert-warning" role="alert">Looks like you haven't added any snippets yet!</div>
+    </div>
 
-      <div if.bind="snippets.length > 0" class="col-sm-12 list-group au-animate">
-        <a repeat.for="snippet of snippets" route-href="route: snippet-view; params.bind: { id: snippet.id }"
-          class="list-group-item">${snippet.title}</a>
-      </div>
-
-      <div if.bind="snippets.length === 0" class="col-sm-12">
-        <div class="alert alert-warning" role="alert">
-          Looks like you haven't added any snippets yet...
-        </div>
-      </div>
+    <div if.bind="snippets.length > 0" class="col-sm-12 list-group au-animate">
+      <a repeat.for="snippet of snippets" route-href="route: snippet-view; params.bind: { id: snippet.id }"
+        class="list-group-item">${snippet.title}</a>
     </div>
   </section>
 </template>

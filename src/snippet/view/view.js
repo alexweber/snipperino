@@ -1,4 +1,4 @@
-import models from '../../db/models';
+import {Snippet} from '../snippet';
 let cp = require('safe-copy-paste');
 
 export class SnippetView {
@@ -20,7 +20,6 @@ export class SnippetView {
           this.langCode = language.attributes.code;
         }
       }
-    }).catch(function (error) {
     }).catch(error => {
       console.error(error);
     });

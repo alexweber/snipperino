@@ -1,17 +1,12 @@
-import models from '../../db/models';
+import {Snippet} from '../snippet';
 
 export class SnippetList {
-  heading = 'My Snippets';
   snippets = [];
 
   activate() {
-    models.Snippet.forge().fetchAll().then((results) => {
-      if (results.length) {
-        results.models.forEach((item) => {
-          this.snippets.push(item.attributes);
-        });
-      }
-    }).catch(function (error) {
+    return Snippet.all().then(snippets => {
+      this.snippets = snippets;
+    }).catch(error => {
       console.error(error);
     });
   }

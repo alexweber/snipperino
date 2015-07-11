@@ -36,8 +36,22 @@ export class Snippet {
     this.router = router;
   }
 
+  /**
+   * Returns all snippets.
+   *
+   * @return {Promise} A promise for an array of snippet plain objects.
+   */
   static all() {
-
+    // @TODO pagination
+    return models.Snippet.forge().fetchAll().then(results => {
+      let snippets = [];
+      if (results.length) {
+        results.models.forEach(item => {
+          snippets.push(item.attributes);
+        });
+      }
+      return snippets;
+    });
   }
 
   static load(id) {
