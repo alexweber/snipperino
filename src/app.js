@@ -3,7 +3,7 @@ import 'bootstrap/css/bootstrap.css!';
 import 'highlight.js/styles/monokai_sublime.css!';
 
 export class App {
-  configureRouter(config, router){
+  configureRouter(config, router) {
     config.title = 'Snipperino';
     config.map([
       {

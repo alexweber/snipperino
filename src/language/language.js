@@ -9,7 +9,7 @@ export class Language {
    */
   static all() {
     // @TODO pagination
-    return models.Language.forge().fetchAll().then((results) => {
+    return models.Language.forge().fetchAll().then(results => {
       let languages = [];
       if (results.length) {
         results.models.forEach((item) => {
@@ -17,7 +17,7 @@ export class Language {
         });
       }
       return languages;
-    })
+    });
   }
 
   static load(id) {
