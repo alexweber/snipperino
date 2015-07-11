@@ -1,6 +1,40 @@
 import models from '../db/models';
 
 export class Language {
+  configureRouter(config, router) {
+    config.map([
+      {
+        route: '',
+        name: 'language-list',
+        moduleId: './list/list',
+        nav: true,
+        title: 'All'
+      },
+      {
+        route: 'add',
+        name: 'language-add',
+        moduleId: './form/form',
+        nav: true,
+        title: 'Add'
+      },
+      {
+        route: 'edit/:id',
+        name: 'language-edit',
+        moduleId: './form/form',
+        nav: false,
+        title: 'Edit'
+      },
+      {
+        route: 'view/:id',
+        name: 'language-view',
+        moduleId: './view/view',
+        nav: false,
+        title: 'View'
+      },
+    ]);
+
+    this.router = router;
+  }
 
   /**
    * Returns all languages.
