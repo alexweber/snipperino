@@ -2,13 +2,19 @@ import {Tag} from '../tag';
 
 export class TagList {
   tags = [];
+  tagsEmpty = true;
 
   activate() {
     return Tag.all().then(tags => {
       this.tags = tags;
+      this.checkTagsEmpty();
     }).catch(error => {
       console.error(error);
     });
+  }
+
+  checkTagsEmpty() {
+    this.tagsEmpty = this.tags.length ? false : true;
   }
 
   // @TODO figure out how to reduce code duplication between this delete and the
@@ -21,7 +27,8 @@ export class TagList {
       Tag.delete(tag.id).then(() => {
         // @TODO proper messages.
         alert('tag deleted!');
-        delete(this.tags[index]);
+        this.tags.splice(index, 1);
+        this.checkTagsEmpty();
       }).catch(error => {
         console.error(error);
       });
