@@ -1,0 +1,37 @@
+@import '_animations';
+@import '_splash';
+
+body {
+  margin: 0;
+}
+
+.page-host {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+section {
+  margin: 0 20px;
+}
+
+.navbar-nav li.loader {
+  margin: 12px 24px 0 6px;
+}
+
+// Page transitions.
+section.au-enter-active {
+  -webkit-animation: fadeInRight 1s;
+  animation: fadeInRight 1s;
+}
+
+// Code Highlighting.
+.snippet-container pre {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

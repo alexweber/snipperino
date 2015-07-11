@@ -7,7 +7,7 @@ module.exports = {
   root: appRoot,
   source: appRoot + '**/*.js',
   html: appRoot + '**/*.html',
-  sass: appRoot + '**/*.scss',
+  sass: './scss/styles.scss',
   output: outputRoot,
   doc:'./doc',
   e2eSpecsSrc: 'test/e2e/src/*.js',
