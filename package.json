@@ -67,14 +67,11 @@
       "aurelia-framework": "github:aurelia/framework@^0.13.0",
       "aurelia-http-client": "github:aurelia/http-client@^0.10.0",
       "aurelia-router": "github:aurelia/router@^0.10.0",
-      "bookshelf": "npm:bookshelf@^0.8.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "core-js": "npm:core-js@^0.9.18",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0",
-      "highlight.js": "npm:highlight.js@^8.6.0",
-      "knex": "npm:knex@^0.8.6",
-      "sqlite3": "npm:sqlite3@^3.0.8"
+      "highlight.js": "npm:highlight.js@^8.6.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
