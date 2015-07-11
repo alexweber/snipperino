@@ -2,27 +2,29 @@
   <require from='./operations'></require>
 
   <section class="au-animate">
-    <a route-href="route: language-add" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add language</a>
+    <div class="container-fluid">
+      <a route-href="route: language-add" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> Add language</a>
 
-    <div class="panel panel-default">
-      <div class="panel-heading">${heading}</div>
+      <div class="panel panel-default">
+        <div class="panel-heading">${heading}</div>
 
-      <div if.bind="languages.length === 0" class="panel-body">
-        <div class="alert alert-warning" role="alert">Looks like you haven't added any languages yet...</div>
+        <div if.bind="languages.length === 0" class="panel-body">
+          <div class="alert alert-warning" role="alert">Looks like you haven't added any languages yet...</div>
+        </div>
+
+        <table if.bind="languages.length > 0" class="table">
+          <tr>
+            <th>Language</th>
+            <th>Code</th>
+            <th>Operations</th>
+          </tr>
+          <tr repeat.for="lang of languages">
+            <td>${lang.name}</td>
+            <td>${lang.code}</td>
+            <td><language-operations lang.bind="lang"></language-operations></td>
+          </tr>
+        </table>
       </div>
-
-      <table if.bind="languages.length > 0" class="table">
-        <tr>
-          <th>Language</th>
-          <th>Code</th>
-          <th>Operations</th>
-        </tr>
-        <tr repeat.for="lang of languages">
-          <td>${lang.name}</td>
-          <td>${lang.code}</td>
-          <td><language-operations lang.bind="lang"></language-operations></td>
-        </tr>
-      </table>
-    </div>
+    </div><!--/.container-fluid-->
   </section>
 </template>
