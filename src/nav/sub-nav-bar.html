@@ -1,0 +1,9 @@
+<template>
+  <section class="au-animate">
+    <ul class="nav nav-pills">
+      <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+        <a href.bind="row.href">${row.title}</a>
+      </li>
+    </ul>
+  </section>
+</template>
