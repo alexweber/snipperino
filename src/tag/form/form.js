@@ -9,7 +9,7 @@ export class TagForm {
   name = '';
 
   get slug() {
-    return slug(this.name);
+    return slug(this.name, {mode: 'rfc3986'});
   }
 
   activate (params) {
