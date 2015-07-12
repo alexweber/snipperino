@@ -8,7 +8,7 @@ Language = bookshelf.Model.extend({
   tableName: 'languages',
   snippets: () => {
     return this.hasMany(Snippet);
-  }
+  },
 });
 
 Snippet = bookshelf.Model.extend({
@@ -19,14 +19,14 @@ Snippet = bookshelf.Model.extend({
   },
   tags: () => {
     return this.belongsToMany(Tag);
-  }
+  },
 });
 
 Tag = bookshelf.Model.extend({
   tableName: 'tags',
   snippets: () => {
     return this.belongsToMany(Snippet);
-  }
+  },
 });
 
 export default {
