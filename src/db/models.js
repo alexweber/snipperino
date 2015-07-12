@@ -2,7 +2,7 @@
 import bookshelf from './bookshelf';
 
 // Define models.
-let Language, Snippet, Tag;
+let Language, Snippet, Tag, Settings;
 
 Language = bookshelf.Model.extend({
   tableName: 'languages',
@@ -29,8 +29,13 @@ Tag = bookshelf.Model.extend({
   },
 });
 
+Settings = bookshelf.Model.extend({
+  tableName: 'settings',
+});
+
 export default {
   Language,
   Snippet,
-  Tag
+  Tag,
+  Settings,
 };
