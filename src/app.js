@@ -37,7 +37,7 @@ export class App {
       {
         route: 'settings',
         name: 'settings',
-        moduleId: './settings/form',
+        moduleId: './settings/settings',
         nav: true,
         title: 'Settings'
       }
