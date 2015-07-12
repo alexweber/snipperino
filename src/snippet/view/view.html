@@ -8,10 +8,10 @@
     <h2>${snippet.title}</h2>
 
     <div class="snippet-container">
-      <pre><code highlight.bind="langCode">${snippet.contents}</code></pre>
+      <pre><code highlight.bind="snippet.language.code">${snippet.contents}</code></pre>
 
       <ul class="list-group">
-        <li if.bind="language" class="list-group-item"><b>Language:</b> ${language}</li>
+        <li if.bind="snippet.language" class="list-group-item"><b>Language:</b> ${snippet.language.name}</li>
         <li if.bind="snippet.tags" class="list-group-item"><b>Tags:</b> ${snippet.tags | tags}</li>
       </ul>
     </div>

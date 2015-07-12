@@ -11,14 +11,9 @@ export class SnippetView {
   }
 
   activate(params) {
-    return models.Snippet.forge({ id: params.id }).fetch({ withRelated: ['language'] }).then((snippet) => {
+    return Snippet.load(params.id).then(snippet => {
       if (snippet) {
-        this.snippet = snippet.attributes;
-        let language = snippet.related('language');
-        if (language.id) {
-          this.language = language.attributes.name;
-          this.langCode = language.attributes.code;
-        }
+        this.snippet = snippet;
       }
     }).catch(error => {
       console.error(error);
