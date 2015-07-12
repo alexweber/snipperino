@@ -6,7 +6,7 @@ let Language, Snippet, Tag, Settings;
 
 Language = bookshelf.Model.extend({
   tableName: 'languages',
-  snippets: () => {
+  snippets: function() {
     return this.hasMany(Snippet);
   },
 });
@@ -14,17 +14,17 @@ Language = bookshelf.Model.extend({
 Snippet = bookshelf.Model.extend({
   tableName: 'snippets',
   hasTimestamps: true,
-  language: () => {
+  language: function() {
     return this.belongsTo(Language);
   },
-  tags: () => {
+  tags: function() {
     return this.belongsToMany(Tag);
   },
 });
 
 Tag = bookshelf.Model.extend({
   tableName: 'tags',
-  snippets: () => {
+  snippets: function() {
     return this.belongsToMany(Snippet);
   },
 });
