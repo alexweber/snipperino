@@ -10,12 +10,8 @@ export class SnippetForm {
   // Available language options.
   languages = [];
 
-  // Default form values.
-  id = null;
-  title = '';
-  language = '';
-  tags = '';
-  contents = '';
+  // Snippet being edited.
+  snippet = {};
 
   constructor(Router) {
     this.router = Router;
@@ -32,16 +28,8 @@ export class SnippetForm {
     // Load snippet if editing.
     if (params.hasOwnProperty('id')) {
       this.heading = 'Edit Snippet';
-      return Snippet.load(params.id).then(snippet => {
-        // @TODO assign vars
-        console.log(snippet);
-        // {
-        //   id: this.id,
-        //   title: this.title,
-        //   language: this.language,
-        //   tags: this.tags,
-        //   contents: this.contents
-        // } = snippet;
+      return Snippet.load(params.id, false).then(snippet => {
+        this.snippet = snippet;
       }).catch(error => {
         console.error(error);
       });
@@ -50,14 +38,9 @@ export class SnippetForm {
 
   doSubmit () {
     // @TODO validate
-    console.log(this);
-    models.Snippet.forge({
-      id: this.id,
-      title: this.title,
-      language_id: this.language,
-      contents: this.contents
-    }).save().then(result => {
+    models.Snippet.forge(this.snippet).save().then(result => {
       if (result) {
+        // @TODO better messages
         alert('Snippet saved!');
         this.router.navigateToRoute('snippet-list');
       }
