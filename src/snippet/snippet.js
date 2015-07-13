@@ -62,12 +62,13 @@ export class Snippet {
    * for use in view models.
    *
    * @param  {Snippet} snippet A Snippet bookshelf model object.
+   * @param  {boolean} [related] Whether to load related fields, defaults to true.
    * @return {mixed} A snippet information plain object or null.
    *
    * @see Snippet._getLanguage()
    * @see Snippet._getTags()
    */
-  static _buildSnippet(snippet) {
+  static _buildSnippet(snippet, related = true) {
     let retVal = null;
     if (snippet) {
       let attrs = snippet.attributes;
@@ -75,10 +76,14 @@ export class Snippet {
       retVal.id = attrs.id;
       retVal.title = attrs.title;
       retVal.contents = attrs.contents;
-      retVal.language = Snippet._getLanguage(snippet);
+      // @TODO verify this
+      retVal.language_id = attrs.language_id;
+      // @TODO add tags.
 
-      // @TODO fetch & preprocess tags.
-      // retVal.tags = [];
+      if (related) {
+        retVal.language = Snippet._getLanguage(snippet);
+        retVal.tags = Snippet._getTags(snippet);
+      }
     }
     return retVal;
   }
@@ -119,12 +124,17 @@ export class Snippet {
    * Load a snippet by id.
    *
    * @param  {integer} id A snippet id.
+   * @param  {boolean} [related] Whether to load related fields, defaults to true.
    * @return {Promise} A promise for a snippet plain object containg language and tags
    *                   info as plain objects if available.
    */
-  static load(id) {
-    return models.Snippet.forge({ id }).fetch({ withRelated: ['language'] }).then(snippet => {
-      return Snippet._buildSnippet(snippet);
+  static load(id, related = true) {
+    let options = {};
+    if (related) {
+      options.withRelated = ['language', 'tags'];
+    }
+    return models.Snippet.forge({ id }).fetch(options).then(snippet => {
+      return Snippet._buildSnippet(snippet, related);
     });
   }
 }
